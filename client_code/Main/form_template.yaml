@@ -176,14 +176,6 @@ components:
     name: contact_link
     properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: 16, foreground: '', icon: '', icon_align: left, italic: false, role: spaced-title, spacing_above: small, spacing_below: small, text: CONTACT, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
     type: Link
-  - layout_properties: {}
-    name: insta_link
-    properties: {align: center, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: 'fa:instagram', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, url: 'https://www.instagram.com', visible: true, wrap_on: mobile}
-    type: Link
-  - layout_properties: {}
-    name: link_1
-    properties: {align: center, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: 'fa:twitter', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, url: 'https://twitter.com/anvil_works', visible: true, wrap_on: mobile}
-    type: Link
   - layout_properties: {width: 44}
     name: spacer_1
     properties: {height: 32}
@@ -199,7 +191,7 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: label_1
-  properties: {align: center, background: '', bold: false, border: '', font: Yeseva One, font_size: 24, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Cupcakes & Co., tooltip: '', underline: false, visible: true}
+  properties: {align: center, background: '', bold: false, border: '', font: Yeseva One, font_size: 24, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: ReUse, tooltip: '', underline: false, visible: true}
   type: Label
 - components:
   - event_bindings: {click: home_link_click}
