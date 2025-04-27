@@ -1,5 +1,6 @@
 from ._anvil_designer import MainTemplate
 from anvil import *
+import anvil.users
 import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -21,10 +22,10 @@ class Main(MainTemplate):
     self.navigate(self.home_link, Home())
     self.cart_items = []
     
-    for link in [self.home_link_copy, self.shop_link_copy, self.about_link_copy, self.contact_link_copy, self.insta_link_copy, self.link_1_copy, self.cart_link_copy]:
+    for link in [self.home_link_copy, self.about_link_copy, self.contact_link_copy, self.sign_in_copy, self.cart_link_copy]:
       link.role = ['spaced-title', 'display-responsive']
     
-    for link in [self.home_link, self.shop_link, self.about_link, self.contact_link, self.insta_link, self.link_1, self.cart_link]:
+    for link in [self.home_link, self.about_link, self.contact_link, self.sign_in, self.cart_link]:
       link.role = ['spaced-title', 'display-none-responsive']
     
   def add_to_cart(self, product, quantity):
@@ -48,10 +49,6 @@ class Main(MainTemplate):
     self.navigate(self.home_link, Home())
 
 
-  def shop_link_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.navigate(self.shop_link, Shop())
-
   def about_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.navigate(self.about_link, About())
@@ -64,6 +61,10 @@ class Main(MainTemplate):
     """This method is called when the link is clicked"""
     self.navigate(self.cart_link, Cart(items=self.cart_items))
 
+  def sign_in_link_click(self, **event_args):
+    """This method is called when the Link is shown on the screen"""
+    pass
+
   def subscribe_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     email = self.subscribe_textbox.text
@@ -71,6 +72,19 @@ class Main(MainTemplate):
       anvil.server.call('add_subscriber', email)
       self.subscribe_textbox.text = None
       Notification("Thanks for subscribing!").show()
+
+  def sign_in_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    user = anvil.users.get_user()
+    if user:
+      logout = confirm("Would you like to logout?")
+      if logout:
+        anvil.users.logout()
+        self.go_to_home()
+    else:
+      anvil.users.login_with_form()
+    self.change_sign_in_text()
+
 
 
 
