@@ -20,12 +20,13 @@ class Main(MainTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.navigate(self.home_link, Home())
+    self.change_sign_in_text()
     self.cart_items = []
     
     for link in [self.home_link_copy, self.about_link_copy, self.contact_link_copy, self.sign_in_copy, self.cart_link_copy]:
       link.role = ['spaced-title', 'display-responsive']
     
-    for link in [self.home_link, self.about_link, self.contact_link, self.sign_in, self.cart_link]:
+    for link in [self.home_link, self.about_link, self.contact_link, self.sign_in_link, self.cart_link]:
       link.role = ['spaced-title', 'display-none-responsive']
     
   def add_to_cart(self, product, quantity):
@@ -38,7 +39,7 @@ class Main(MainTemplate):
       self.cart_items.append({'product': product, 'quantity': quantity})
     
   def navigate(self, active_link, form):
-    for i in [self.home_link, self.shop_link, self.about_link, self.contact_link, self.cart_link]:
+    for i in [self.home_link, self.about_link, self.contact_link, self.sign_in_link, self.cart_link]:
       i.foreground = 'theme:Primary 700'
     active_link.foreground = 'theme:Secondary 500'
     self.column_panel_1.clear()
@@ -63,18 +64,6 @@ class Main(MainTemplate):
 
   def sign_in_link_click(self, **event_args):
     """This method is called when the Link is shown on the screen"""
-    pass
-
-  def subscribe_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    email = self.subscribe_textbox.text
-    if email:
-      anvil.server.call('add_subscriber', email)
-      self.subscribe_textbox.text = None
-      Notification("Thanks for subscribing!").show()
-
-  def sign_in_click(self, **event_args):
-    """This method is called when the link is clicked"""
     user = anvil.users.get_user()
     if user:
       logout = confirm("Would you like to logout?")
@@ -84,6 +73,24 @@ class Main(MainTemplate):
     else:
       anvil.users.login_with_form()
     self.change_sign_in_text()
+
+  def subscribe_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    email = self.subscribe_textbox.text
+    if email:
+      anvil.server.call('add_subscriber', email)
+      self.subscribe_textbox.text = None
+      Notification("Thanks for subscribing!").show()
+
+  def change_sign_in_text(self):
+    user = anvil.users.get_user()
+    if user:
+      email = user["email"]
+      self.sign_in_link.text = email
+    else:
+      self.sign_in_link.text = "Sign In"
+    
+    self.toggle_my_courses_link()
 
 
 
