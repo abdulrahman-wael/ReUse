@@ -1,7 +1,7 @@
 components:
 - layout_properties: {grid_position: 'EVYWIO,VNBLAF'}
   name: label_1
-  properties: {align: center, background: '', bold: false, border: '', font: Yeseva One, font_size: 28, foreground: 'theme:Primary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: We've been baking up goodness since 1994., tooltip: '', underline: false, visible: true}
+  properties: {align: center, background: '', bold: false, border: '', font: Yeseva One, font_size: 28, foreground: 'theme:Primary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: ReUse ... the go-to solution for reusing assets in the campus, tooltip: '', underline: false, visible: true}
   type: Label
 - layout_properties: {grid_position: 'VNUOYF,KIRLOX'}
   name: spacer_2
@@ -9,23 +9,61 @@ components:
   type: Spacer
 - layout_properties: {grid_position: 'WXHXGW,NHMLTJ AUPCBW,MCFAID'}
   name: label_4
-  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 20, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: true, role: null, spacing_above: small, spacing_below: none, text: Fresh all-natural ingredients., tooltip: '', underline: false, visible: true}
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 20, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: true, role: null, spacing_above: small, spacing_below: none, text: The problem, tooltip: '', underline: false, visible: true}
   type: Label
 - layout_properties: {grid_position: 'WXHXGW,NHMLTJ ZLCIDV,UYVXDN'}
   name: label_2
-  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 16, foreground: 'theme:Primary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: none, spacing_below: small, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat sem purus, ultrices hendrerit nunc gravida sit amet. Aliquam et fringilla neque, vel tincidunt nibh. Vestibulum accumsan aliquam diam, vitae viverra nunc blandit in.  Donec facilisis vehicula ornare. Ut neque quam, porta sit amet ante et, porta mollis felis. Aliquam et fringilla neque, vel tincidunt nibh. Vestibulum accumsan aliquam diam, vitae viverra nunc blandit in. Donec facilisis vehicula ornare. ', tooltip: '', underline: false, visible: true}
+  properties:
+    align: center
+    background: ''
+    bold: false
+    border: ''
+    font: ''
+    font_size: 16
+    foreground: theme:Primary 700
+    icon: ''
+    icon_align: left
+    italic: false
+    role: null
+    spacing_above: none
+    spacing_below: small
+    text: |-
+      In many universities, there is an abundance of unused resources held by students and faculty. These resources, which range from textbooks and notes to technological devices, often remain unused after a semester or a course has ended. At the same time, there are many students who actively need these resources but may not be able to access them due to financial constraints or lack of information about their availability. Despite the existence of platforms provided by major companies such as Meta and Amazon that allow people to buy, sell, or exchange goods, these platforms are rarely utilized by students for resource sharing within
+      the university. This discrepancy could be attributed to the absence of physical evidence of exchanges, which leads to a lack of trust in the security and reliability of these transactions. Additionally, these platforms often involve fees or additional costs, making them less appealing to students looking for affordable solutions.
+    tooltip: ''
+    underline: false
+    visible: true
   type: Label
 - layout_properties: {grid_position: 'WXHXGW,NHMLTJ ITHUQD,UMALBI'}
   name: label_5
-  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 20, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: true, role: null, spacing_above: medium, spacing_below: none, text: Another subheading goes here., tooltip: '', underline: false, visible: true}
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 20, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: true, role: null, spacing_above: medium, spacing_below: none, text: Our solution, tooltip: '', underline: false, visible: true}
   type: Label
 - layout_properties: {grid_position: 'WXHXGW,NHMLTJ QJQADQ,DTPWLT'}
   name: label_3
-  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: 16, foreground: 'theme:Primary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: none, spacing_below: small, text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat sem purus, ultrices hendrerit nunc gravida sit amet. Aliquam et fringilla neque, vel tincidunt nibh. Donec facilisis vehicula ornare. Ut neque quam, porta sit amet ante et, porta mollis felis. Aliquam et fringilla neque, vel tincidunt nibh. Vestibulum accumsan aliquam diam, vitae viverra nunc blandit in. Donec facilisis vehicula ornare.  Vestibulum accumsan aliquam diam, vitae viverra nunc blandit in. ', tooltip: '', underline: false, visible: true}
+  properties:
+    align: center
+    background: ''
+    bold: false
+    border: ''
+    font: ''
+    font_size: 16
+    foreground: theme:Primary 700
+    icon: ''
+    icon_align: left
+    italic: false
+    role: null
+    spacing_above: none
+    spacing_below: small
+    text: |-
+      A dedicated platform that is integrated into the local university setting can serve as a bridge between those who have surplus resources and those in need. The goal of such a platform is to facilitate the exchange of resources within the university community, offering not only a digital solution but also physical exchange points on campus. These physical booths act as verified exchange points, ensuring that transactions are secure and the presence of the resources is tangible. This approach adds a layer of accountability and trust, which is often missing from large-scale online platforms. Moreover, the absence of transaction fees or the implementation of minimal fees greatly reduces costs for students, making resource-sharing a financially viable option. Students can exchange books, gadgets, and course materials without the financial burden typically associated with purchasing new items.
+      For instance, at the university of California (UC Berkeley), the ReUSE program focuses on reducing waste by facilitating the reuse of items like textbooks, stationery, and other materials on campus. This initiative is part of the university's broader Cal Zero Waste program, which aims to minimize campus waste through recycling and resource-sharing
+    tooltip: ''
+    underline: false
+    visible: true
   type: Label
 - layout_properties: {grid_position: 'WXHXGW,JRXOGS'}
   name: image_1
-  properties: {background: '', border: '', display_mode: zoom_to_fill, foreground: '', height: '500', horizontal_align: center, role: null, source: _/theme/ReUse_logo.jpg, spacing_above: small, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
+  properties: {background: '', border: '', display_mode: zoom_to_fill, foreground: '', height: '500', horizontal_align: center, role: null, source: _/theme/ReUSE in UC BERKELEY.png, spacing_above: small, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
   type: Image
 - layout_properties: {grid_position: 'UULKIX,FHCNWD'}
   name: spacer_1

@@ -17,15 +17,11 @@ class Home(HomeTemplate):
     self.init_components(**properties)
     best_sellers = app_tables.products.search(best_seller=True)
     
-    self.banner.role = ['spaced-title', 'left-right-padding']
+    # self.banner.role = ['spaced-title', 'left-right-padding']
     
     for p in best_sellers:
       self.flow_panel_1.add_component(Product(item=p), width='30%')
 
-
-  def shop_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    get_open_form().shop_link_click()
 
 
 
