@@ -23,10 +23,10 @@ class Main(MainTemplate):
     self.change_sign_in_text()
     self.cart_items = []
     
-    for link in [self.home_link_copy, self.about_link_copy, self.contact_link_copy, self.sign_in_copy, self.cart_link_copy]:
+    for link in [self.home_link_copy, self.about_link_copy, self.contact_link_copy, self.my_items_link_copy, self.sign_in_copy, self.cart_link_copy]:
       link.role = ['spaced-title', 'display-responsive']
     
-    for link in [self.home_link, self.about_link, self.contact_link, self.sign_in_link, self.cart_link]:
+    for link in [self.home_link, self.about_link, self.contact_link, self.my_items_link, self.sign_in_link, self.cart_link]:
       link.role = ['spaced-title', 'display-none-responsive']
     
   def add_to_cart(self, product, quantity):
@@ -39,7 +39,7 @@ class Main(MainTemplate):
       self.cart_items.append({'product': product, 'quantity': quantity})
     
   def navigate(self, active_link, form):
-    for i in [self.home_link, self.about_link, self.contact_link, self.sign_in_link, self.cart_link]:
+    for i in [self.home_link, self.about_link, self.contact_link, self.my_items_link, self.sign_in_link, self.cart_link]:
       i.foreground = 'theme:Primary 700'
     active_link.foreground = 'theme:Secondary 500'
     self.column_panel_1.clear()
@@ -82,6 +82,9 @@ class Main(MainTemplate):
       self.subscribe_textbox.text = None
       Notification("Thanks for subscribing!").show()
 
+  def toggle_my_items_link(self):
+    self.my_items_link.visible = anvil.users.get_user() != None
+
   def change_sign_in_text(self):
     user = anvil.users.get_user()
     if user:
@@ -90,7 +93,11 @@ class Main(MainTemplate):
     else:
       self.sign_in_link.text = "Sign In"
     
-    self.toggle_my_courses_link()
+    self.toggle_my_items_link()
+
+  def my_items_link(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.navigate(self.my_items_link, My_items() )
 
 
 
