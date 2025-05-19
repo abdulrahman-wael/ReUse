@@ -37,7 +37,6 @@ class Cart(CartTemplate):
 
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
